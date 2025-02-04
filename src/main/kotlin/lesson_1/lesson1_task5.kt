@@ -1,13 +1,13 @@
 package org.example.lesson_1
 
-import java.util.Formatter
+const val SECONDS_IN_MINUTE = 60
 
 fun main() {
     val secondsTotal: Int = 6360
 
     val hours: Int = secondsTotal / 3600
-    val minutes: Int = (secondsTotal - (3600 * hours)) / 60
-    val seconds: Int = secondsTotal - (3600 * hours) - (60 * minutes)
+    val minutes: Int = (secondsTotal - ((SECONDS_IN_MINUTE * SECONDS_IN_MINUTE) * hours)) / SECONDS_IN_MINUTE
+    val seconds: Int = secondsTotal - ((SECONDS_IN_MINUTE * SECONDS_IN_MINUTE) * hours) - (SECONDS_IN_MINUTE * minutes)
 
-    println(Formatter().format("%1\$02d:%2\$02d:%3\$02d", hours, minutes, seconds).toString())
+    println("%02d:%02d:%02d".format(hours, minutes, seconds))
 }
