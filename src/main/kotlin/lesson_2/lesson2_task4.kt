@@ -1,12 +1,12 @@
 package org.example.lesson_2
 
 fun main() {
-    val buff = 1.2f
-    val crystal = 7
-    val iron = 11
+    val buff = 20
+    val crystal = 7f
+    val iron = 11f
 
-    val crystalWithBuff = (buff * crystal).toInt()
-    val ironWithBuff = (buff * iron).toInt()
+    val crystalWithBuff = (crystal / 100 * (100 + buff)).toInt()
+    val ironWithBuff = (iron / 100 * (100 + buff)).toInt()
 
     println(crystalWithBuff)
     println(ironWithBuff)
