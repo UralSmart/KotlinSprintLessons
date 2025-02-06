@@ -3,17 +3,12 @@ package org.example.lesson_2
 import kotlin.math.pow
 
 fun main() {
-    val startDeposit = 70_000.000f
-    val interestRate = 1.167f
+    val startDeposit = 70_000.0
+    val interestRate = 16.7
     val depositTime = 20
-    val daysInYear = 365.25f
 
-    var result = startDeposit * interestRate
-    for(i in 2..depositTime) {
-        result *= interestRate
-    }
+    val rateInDec = interestRate / 100.0
+
+    val result = startDeposit * Math.pow(1.0 + rateInDec, depositTime.toDouble())
     println("%.3f".format(result))
-
-    val result2 = (startDeposit * (1 * interestRate * daysInYear / daysInYear * 1).pow(depositTime))
-    println("%.3f".format(result2))
 }
